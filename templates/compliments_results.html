@@ -4,11 +4,16 @@
         <title>Compliments Results</title>
     </head>
     <body>
-        <!-- Your HTML code goes here! -->
-
-        
-
-        
-        
+        <p>
+            Hi, {{users_name}}!
+            {%if wants_compliments%}
+            You are:
+            <ul>
+                {%for c in compliment_list:%}
+                <li>{{c}}</li>
+                {%endfor%}
+            </ul>
+            {%endif%}
+        </p>
     </body>
 </html>
