@@ -108,6 +108,10 @@ def compliments():
 def compliments_results():
     """Show the user some compliments."""
     compliment_count = int(request.args.get("num_compliments"))
+    if compliment_count > 5:
+        compliment_count = 5
+    elif compliment_count < 1:
+        compliment_count = 1
     context = {
         "wants_compliments": request.args.get("wants_compliments") == "yes",
         "compliment_list": random.sample(list_of_compliments, compliment_count),
